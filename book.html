@@ -47,28 +47,38 @@
         <section class="text-light p-5 text-center text-sm-start" style="background-color: #525252;">
           <div class="container-sm">
             <div class="d-sm-flex">
-              <img id="bookImg" class="img-responsive me-5 rounded-start" style="height: 130; width: 231;" src="Images/Cover-1.png" alt="" />
+              <img  class="img-responsive me-5 rounded-start bookImg" style="height: 130; width: 231;" src="Images/Cover-1.png" alt="" />
               <div> 
-                <h1 id="title"> </h1>
+                <h1 class="title"> </h1>
                 <h5>Genres</h5>
-                <p id="text" style="font-size:calc(8px + .4)"> 
+                <p class="text" style="font-size:calc(8px + .4)"> 
                 </p>
-
+                
               </div> 
             </div>
+              <div class="chapterSelect">
+                <h3>Most Recent Chapters:</h3>
+                <a id="chapterOption" class="ld1 " href="chapter.html" onclick="selectNewChapter(0)"></a><br>
+                <a id="chapterOption" class="ld2" href="chapter.html" onclick="selectNewChapter(1)"></a><br>
+                <a id="chapterOption" class="ld3" href="chapter.html" onclick="selectNewChapter(2)"></a><br>
+                <a id="chapterOption" class="ld4" href="chapter.html" onclick="selectNewChapter(3)"></a><br>
+                <a id="chapterOption" class="ld5" href="chapter.html" onclick="selectNewChapter(4)"></a><br>
+                <a id="chapterOption" class="ld6" href="chapter.html" onclick="selectNewChapter(5)"></a><br>
+                <a id="chapterOption" class="ld7" href="chapter.html" onclick="selectNewChapter(6)"></a><br>
+                <a id="chapterOption" class="ld8" href="chapter.html" onclick="selectNewChapter(7)"></a><br>
+                <a id="chapterOption" class="ld9" href="chapter.html" onclick="selectNewChapter(8)"></a><br>
+                <a id="chapterOption" class="ld10 " href="chapter.html" onclick="selectNewChapter(9)"></a><br>
+              </div>
+              
+           
+
           </div>
         </section>
       </div>
     </div>
   </div>
-  
-  <script >
-   document.getElementById('text').innerHTML = sessionStorage["currentDesc"];
-   document.getElementById('title').innerHTML = sessionStorage['currentTitle'];
-   var image = document.getElementById('bookImg');
-   var curImgSrc = sessionStorage['currentImg'] + "";
-   image.src = curImgSrc;
-  </script>
+
+ <script src="./booksite.js"></script>
   
 </body>
 </html>
