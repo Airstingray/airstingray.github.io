@@ -1,12 +1,17 @@
-let bookmarkedNovel = [];
+
 
 // function setBookmarked(){
-//   array.forEach(sessionStorage.getItem(bookmarked) => {
-    
+//   array = sessionStorage.getItem("bookmarked")
+//   newBookmarked = [];
+//   array.forEach(item => {
+//     newBookmarked.push(item);
 //   });
+//   alert(newBookmarked)
+//   return newBookmarked;
 // }
 
-// setBookmarked();
+let bookmarkedNovel = [];
+
 
 
 
@@ -114,22 +119,33 @@ async function fetchUser(){
       }
       bookmarkedNovel = tempBook;
     }
-    alert("logged")
+    
     sessionStorage.setItem("bookmarked", bookmarkedNovel);
-    alert(sessionStorage.getItem("bookmarked"));
-    updatebookmarkNovelsPage();
+    console.log(sessionStorage.getItem("bookmarked"));
+    //updatebookmarkNovelsPage();
   }
 
-  function updatebookmarkNovelsPage(){
-     for(i=0; i<5; i++){
-      if(bookmarkedNovel[i] == 0){
-        break
-      }else{
-        var x=document.getElementById("bpb" +(1+i));
-        x.style.visibility="visible";
-      }
-     }
-  }
+  // function updatebookmarkNovelsPage(){
+  //    if(bookmarkedNovel.length > 5){
+  //     for(i=0; i<5; i++){
+        
+  //         var x=document.getElementById("bpb" +(1+i));
+  //         x.style.visibility="visible";
+        
+  //      }
+  //    }else {
+  //     for(i=0; i<bookmarkedNovel.length; i++){
+  //       path = "bpb" +(1+i)
+  //       var x=document.getElementById(path);
+  //       x.style.visibility="visible";
+  //      }
+  //      for(i=bookmarkedNovel.length; i<5; i++){
+  //       path = "bpb" +(1+i)
+  //       var x=document.getElementById(path);
+  //       x.style.visibility="hidden";
+  //      }
+  //    }
+  // }
   // var x=document.getElementById("book-preview-bookmarked");
   // x.style.visibility="visible";
 
