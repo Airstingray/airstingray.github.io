@@ -40,9 +40,8 @@ async function fetchUser(){
       //Break into the catch, throw an error
     } catch(error){
       console.log('error');
-      if (!error == 200){
-        document.open('bad.html')
-      }
+      window.location('bad.html');
+      
     }
     
   }
