@@ -1,9 +1,29 @@
+let bookmarkedNovel = [];
+function setBookmarked(){
+  if(sessionStorage.getItem(bookmarked) != null){
+    let bookmarkedNovel = sessionStorage.getItem(bookmarked);
+  }
+}
+
+
+
 function selectNewNovel(num){
-  sessionStorage.setItem("currentNovel", num);
+ sessionStorage.setItem("currentNovel", num);
 }
 
 function selectNewChapter(num){
-  sessionStorage.setItem("currentChapter", num);
+  currentChapt = sessionStorage.getItem("currentChapter");
+  if(num > -1){
+    sessionStorage.setItem("currentChapter", num);
+  }else if(num == -1){
+     previousChapt = parseInt(currentChapt)+1;
+     sessionStorage.setItem("currentChapter", previousChapt);
+  }else if(num == -2){
+     nextChapt = parseInt(currentChapt)-1;
+     sessionStorage.setItem("currentChapter", nextChapt);
+  }
+  
+  updateArrowButtons();
   renderUser2();
 }
 
@@ -19,7 +39,10 @@ async function fetchUser(){
       //TODO
       //Break into the catch, throw an error
     } catch(error){
-      console.log('error')
+      console.log('error');
+      if (!error == 200){
+        document.open('bad.html')
+      }
     }
     
   }
@@ -65,27 +88,36 @@ async function fetchUser(){
     currentChapterText.innerHTML = "&emsp;" + novel.Chapters.Texts[chapterAmount-selectChapter-1];
   }
   
+  function updateArrowButtons(){
+    
+  }
   
   renderUser();
   renderUser2();
+  setBookmarked();
+
+
+  function bookmarkItem(num){
+    if(bookmarkedNovel.includes(num) == False){
+      bookmarkedNovel.push(num);
+    }else{
+      tempBook =[];
+      for(i = 0; i < bookmarkedNovel.length; i++){
+         
+      }
+    }
+    
+    sessionStorage.setItem("bookmarked", bookmarkedNovel);
+    alert(bookmarkedNovel);
+    updatebookmarkNovelsPage();
+  }
+
+  function updatebookmarkNovelsPage(){
+     
+  }
+  // var x=document.getElementById("book-preview-bookmarked");
+  // x.style.visibility="visible";
 
 
 
 
-
-
-
-// let cartTotal = 0
-
-// function addToCart(){
-//   cartTotal += 1;
-//   sessionStorage.setItem("cartTot", cartTotal);
-//   updateCart();
-// }
-
-// function updateCart(){
-//   cartTotal = parseInt(sessionStorage.getItem("cartTot"));
-//   document.getElementById("whatever you called the number").innerHTML = cartTotal;
-// }
-
-// updateCart();

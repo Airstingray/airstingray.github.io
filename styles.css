@@ -181,5 +181,30 @@
 
 .currentChaptText{
   margin-right: 300px;
+  
+}
 
+.container { 
+  width: 750px; 
+  height: 50px;
+}
+.outer-container{
+  display: flex;  
+  flex-direction: row;
+}
+
+.container2 {
+  width: 750px; 
+  height: 50px;
+}
+
+#book-preview-bookmarked{
+  position: relative;
+  display: block;
+  height: 15%;
+  width: 100%;
+  border-style: solid;
+  border-color: #282828;
+  border-width: 1px;
+  border-radius: 25px;
 }

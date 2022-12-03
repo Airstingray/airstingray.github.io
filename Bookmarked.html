@@ -42,35 +42,90 @@
 
   <div class="backdrop justify-content-center">
 
-    <div class="row" id="bookmarked_wrapper">
-      <div class="novel-stuff d-flex justify-content-center col">
-        <section class="text-light p-5 text-center text-sm-start" style="background-color: #525252;">
-          <div class="container-sm">
-            <div class="d-sm-flex">
-              <img class="img-responsive me-5 rounded-start" src="Images/Cover-1.png" alt="" />
-              <div> 
-                <h1> sbdiaubsdasd</h1>
-                <p id="desc_1101" style="font-size:calc(8px + .4)" ></p>
-              </div> 
-            </div>
+    <div class="row" id="wrapper">
+
+      <div id="book-preview-bookmarked" style="visibility:hidden;">
+        <div class="cover-box"><img class="cover-img" src="Images/Cover-1.png" alt=""></div>
+        <div class="desc">
+          <a class="book-title-link" href="book.html" onclick="selectNewNovel(0)"><h3></h3></a>
+          <h5>Genres</h5>
+          <p></p>
+        </div>
+        <div class="interactions">
+          <a class="start-reading-button">READ</a>
+          <div>
+            <img onclick="" id="bookmark-icon" src="Images/bookmark.svg">
           </div>
-        </section>
+        </div>
       </div>
-  </div>
+
+      <div id="book-preview-bookmarked" style="visibility:hidden;">
+        <div class="cover-box"><img class="cover-img" src="Images/Cover-1.png" alt=""></div>
+        <div class="desc">
+          <a class="book-title-link" href="book.html" onclick="selectNewNovel(0)"><h3></h3></a>
+          <h5>Genres</h5>
+          <p></p>
+        </div>
+        <div class="interactions">
+          <a class="start-reading-button">READ</a>
+          <div>
+            <img onclick="" id="bookmark-icon" src="Images/bookmark.svg">
+          </div>
+        </div>
+      </div>
+
+      <div id="book-preview-bookmarked" style="visibility:hidden;">
+        <div class="cover-box"><img class="cover-img" src="Images/Cover-1.png" alt=""></div>
+        <div class="desc">
+          <a class="book-title-link" href="book.html" onclick="selectNewNovel(0)"><h3></h3></a>
+          <h5>Genres</h5>
+          <p></p>
+        </div>
+        <div class="interactions">
+          <a class="start-reading-button">READ</a>
+          <div>
+            <img onclick="" id="bookmark-icon" src="Images/bookmark.svg">
+          </div>
+        </div>
+      </div>
+
+      <div id="book-preview-bookmarked" style="visibility:hidden;">
+        <div class="cover-box"><img class="cover-img" src="Images/Cover-1.png" alt=""></div>
+        <div class="desc">
+          <a class="book-title-link" href="book.html" onclick="selectNewNovel(0)"><h3></h3></a>
+          <h5>Genres</h5>
+          <p></p>
+        </div>
+        <div class="interactions">
+          <a class="start-reading-button">READ</a>
+          <div>
+            <img onclick="" id="bookmark-icon" src="Images/bookmark.svg">
+          </div>
+        </div>
+      </div>
+
+      <div id="book-preview-bookmarked" style="visibility:hidden;">
+        <div class="cover-box"><img class="cover-img" src="Images/Cover-1.png" alt=""></div>
+        <div class="desc">
+          <a class="book-title-link" href="book.html" onclick="selectNewNovel(0)"><h3></h3></a>
+          <h5>Genres</h5>
+          <p></p>
+        </div>
+        <div class="interactions">
+          <a class="start-reading-button">READ</a>
+          <div>
+            <img onclick="" id="bookmark-icon" src="Images/bookmark.svg">
+          </div>
+        </div>
+      </div>
+
+    </div>
 
   </div>
   
 
   <script >
-    for(let i = 0; i < sessionStorage.length; i++){
-      if(sessionStorage[i] != undefined){
-        document.getElementById("bookmarked_wrapper").style="visibility: visible;"
-        document.getElementById('desc_1101').innerHTML = sessionStorage[i];
-        break
-      }else{
-        document.getElementById("bookmarked_wrapper").style="visibility: hidden;"
-      }
-    }
+    
   </script>
 
 
