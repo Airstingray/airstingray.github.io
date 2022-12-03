@@ -1,9 +1,12 @@
 let bookmarkedNovel = [];
-function setBookmarked(){
-  if(sessionStorage.getItem(bookmarked) != null){
-    let bookmarkedNovel = sessionStorage.getItem(bookmarked);
-  }
-}
+
+// function setBookmarked(){
+//   array.forEach(sessionStorage.getItem(bookmarked) => {
+    
+//   });
+// }
+
+// setBookmarked();
 
 
 
@@ -95,26 +98,37 @@ async function fetchUser(){
   
   renderUser();
   renderUser2();
-  setBookmarked();
+
 
 
   function bookmarkItem(num){
-    if(bookmarkedNovel.includes(num) == False){
+    let alreadyIncludes = bookmarkedNovel.includes(num);
+    if(alreadyIncludes == false){
       bookmarkedNovel.push(num);
     }else{
       tempBook =[];
       for(i = 0; i < bookmarkedNovel.length; i++){
-         
+         if(bookmarkedNovel[i] != num){
+          tempBook.push(bookmarkedNovel[i]);
+         }
       }
+      bookmarkedNovel = tempBook;
     }
-    
+    alert("logged")
     sessionStorage.setItem("bookmarked", bookmarkedNovel);
-    alert(bookmarkedNovel);
+    alert(sessionStorage.getItem("bookmarked"));
     updatebookmarkNovelsPage();
   }
 
   function updatebookmarkNovelsPage(){
-     
+     for(i=0; i<5; i++){
+      if(bookmarkedNovel[i] == 0){
+        break
+      }else{
+        var x=document.getElementById("bpb" +(1+i));
+        x.style.visibility="visible";
+      }
+     }
   }
   // var x=document.getElementById("book-preview-bookmarked");
   // x.style.visibility="visible";

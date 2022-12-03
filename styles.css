@@ -198,7 +198,7 @@
   height: 50px;
 }
 
-#book-preview-bookmarked{
+.book-preview-bookmarked{
   position: relative;
   display: block;
   height: 15%;
