@@ -34,13 +34,15 @@ async function fetchUser(){
       let response = await fetch(url);
       if(response.status == 200){
         return await response.json();
+      } else{
+        console.log(response.status);
+        window.location = 'https://github.com/Airstingray/airstingray.github.io/blob/main/bad.html'
       }
       
       //TODO
       //Break into the catch, throw an error
     } catch(error){
       console.log('error');
-      window.location('bad.html');
       
     }
     
