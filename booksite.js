@@ -36,7 +36,7 @@ async function fetchUser(){
         return await response.json();
       } else{
         console.log(response.status);
-        window.location = 'https://github.com/Airstingray/airstingray.github.io/blob/main/bad.html'
+        window.location = 'https://airstingray.github.io/bad.html'
       }
       
       //TODO
