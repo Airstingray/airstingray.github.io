@@ -11,6 +11,7 @@
 // }
 
 let bookmarkedNovel = [];
+let novels = [];
 
 
 
@@ -37,10 +38,24 @@ function selectNewChapter(num){
 
 
 async function fetchUser(){
-    let url = 'https://raw.githubusercontent.com/Airstingray/ReadJsonFromJS/main/novels.json';
+    //let url = 'https://raw.githubusercontent.com/Airstingray/ReadJsonFromJS/main/novels.json';
+    let url = '/novel.json';
     try{
       let response = await fetch(url);
       if(response.status == 200){
+  
+          response.json().then(json => {
+            //console.log(JSON.parse(json[2].json));
+            novelsFromJson = JSON.parse(json[2].json);
+            //console.log(novelsFromJson[0])
+            for(i=0;i<6;i++){
+              novels.push(novelsFromJson[i]);
+            }
+            
+          });
+          
+          
+        
         return await response.json();
       } else{
         console.log(response.status);
@@ -58,7 +73,8 @@ async function fetchUser(){
   
   
   async function renderUser(){
-    let novels = await fetchUser();
+    debugger;
+    novels = await fetchUser();
     let selectNovel = sessionStorage.getItem("currentNovel");
     let selectChapter = sessionStorage.getItem("currentChapter");
     let novel = novels[selectNovel];
@@ -83,7 +99,7 @@ async function fetchUser(){
   }
 
   async function renderUser2(){
-    let novels = await fetchUser();
+    novels = await fetchUser();
     let selectNovel = sessionStorage.getItem("currentNovel");
     let selectChapter = sessionStorage.getItem("currentChapter");
     let novel = novels[selectNovel];
@@ -127,32 +143,33 @@ async function fetchUser(){
   }
 
   function updatebookmarkNovelsPage(){
-     if(bookmarkedNovel.length > 5){
+    
+    //  if(bookmarkedNovel.length > 5){
 
-      for(i=0; i<5; i++){
+    //   for(i=0; i<5; i++){
         
-          var x=document.getElementById("bpb" +(1+i));
-          x.style.visibility="visible";
+    //       var x=document.getElementById("bpb" +(1+i));
+    //       x.style.visibility="visible";
         
-       }
+    //    }
 
 
-     }else {
+    //  }else {
 
 
-      for(i=0; i<bookmarkedNovel.length; i++){
-        path = "bpb" +(1+i);
-        var x=document.getElementById(path);
-        x.style.visibility="visible";
-       }
-       for(i=bookmarkedNovel.length; i<5; i++){
-        path = "bpb" +(1+i);
-        var x=document.getElementById(path);
-        x.style.visibility="hidden";
-       }
+    //   for(i=0; i<bookmarkedNovel.length; i++){
+    //     path = "bpb" +(1+i);
+    //     var x=document.getElementById(path);
+    //     x.style.visibility="visible";
+    //    }
+    //    for(i=bookmarkedNovel.length; i<5; i++){
+    //     path = "bpb" +(1+i);
+    //     var x=document.getElementById(path);
+    //     x.style.visibility="hidden";
+    //    }
 
 
-     }
+    //  }
   }
   //  var x=document.getElementById("bpb1");
   //  x.style.visibility="visible";
